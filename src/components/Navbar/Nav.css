@@ -1,0 +1,48 @@
+
+.nav-wrapper{
+position: relative;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: black;
+color: white;
+width: 100%;
+}
+.nav-wrapper1{
+    display: flex;
+    /* justify-content: space-between; */
+  
+}
+.nav-ul{
+    display: flex;
+    list-style: none;
+
+   
+}
+.nav-logo{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+.nav-logo1{
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    width: 40px;
+    height: 40px;
+}
+.nav-logo li{
+font-family: 'Irish Grover';
+color: #F5F5F5;
+font-style: italic;
+font-weight: 500;
+}
+.nav-text{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+    padding-right: 20px;
+    font-size: small;
+}

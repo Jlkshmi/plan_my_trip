@@ -1,0 +1,42 @@
+.footer-container{
+    background-color: rgb(78, 75, 107);
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.footer-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    border-radius: 5px;
+    font-size: smaller;
+    gap: 30px;
+}
+.footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+}
+.footer1{
+    align-items: center;
+    display: flex;
+
+}
+.footer2{
+    width: 30px;
+    padding-top: 10px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.footer3{
+    width:60px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+.footer h5{
+    padding-right: 20px;
+}

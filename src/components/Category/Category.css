@@ -1,0 +1,37 @@
+.cat-wrapper1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+.cat-wrapper{
+    background: white;
+    border-radius: 10px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    gap: 190px;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    margin-top: 50px;
+}
+.logo-wrapper{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    cursor: pointer;
+    
+    
+}
+.logo-wrapper img{
+    border-radius: 10px;
+    width: 50px;
+}
+
+
+
+
+
