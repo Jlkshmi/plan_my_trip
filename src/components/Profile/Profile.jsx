@@ -1,7 +1,13 @@
 import React from 'react'
 import './Profile.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { initialState, updateUser } from '../../redux/slices/userSlice'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Profile() {
+    const user= useSelector(state=>state.user)
+    const dispatch=useDispatch()
+    const navigate= useNavigate()
     return (
         <>
             <div className='profile-wrapper'>
@@ -10,32 +16,30 @@ function Profile() {
                         <i className="fa-solid fa-camera "></i>
                     </div>
                     <div className='sub-wrapper1'>
-                        <h3>UserName</h3>
-                        <h5>Personal Profile</h5>
+                        <h3>{user.username}</h3>
+                        <h4>Personal Profile</h4>
                     </div>
-                    <div className='con-sub-wrapper'>
+                   {user?(<div className='con-sub-wrapper'>
                         <div className='sub-wrapper2'>
-                            <i class="fa-regular fa-user"></i>
+                            <i className="fa-regular fa-user"></i>
                             <h3>Profile</h3>
                         </div>
                         <div className='sub-wrapper2'>
-                            <i class="fa-solid fa-power-off"></i>
+                            <i className="fa-solid fa-power-off" onClick={()=>dispatch(updateUser(initialState))}></i>
                             <h3>Logout</h3>
                         </div>
-                    </div>
+                    </div>):(<Link to="/">
+                    </Link>)}
                     </div>
                 <div className='profile-wrapper2'>
                     <div className='sub-wrapper3'>
                         <h2>Profile</h2>
                         <p>Basic info for a faster booking experience</p>
                         <hr/>
-                        <h3>NAME</h3>
-                        <h3>BIRTHDAY</h3>
-                        <h3>GENDER</h3>
-                        <h3>ADDRESS</h3>
-                        <h3>PHONE</h3>
-                        <h3>PINCODE</h3>
-                        <h3>STATE</h3>
+                        <h3>NAME : {user.name}</h3>
+                        <h3>EMAIL : {user.email}</h3>
+                        <h3>PHONE : {user.phone}</h3>
+                        <h3>ADDRESS : {user.address}</h3>
                     </div>
                 </div>
             </div>

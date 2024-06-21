@@ -6,7 +6,7 @@
    
 }
 .profile-wrapper1{
-    background-color: white;
+    background-color: rgb(252, 248, 248);
     width: fit-content;
     display: flex;
     flex-direction: column;
@@ -52,14 +52,16 @@ h5{
     
 }
 .profile-wrapper2{
-    background-color: white;
-    width: fit-content;
+    background-color:antiquewhite;
+    width: 700px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
     border-radius: 10px;
+    
 }
 .profile-wrapper2 h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -67,4 +69,9 @@ h5{
 .sub-wrapper3{
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.profile_icon{
+    width: 100px;
+    height: 100px;
 }
