@@ -4,7 +4,7 @@ import './HolidayPackages.css'
 function HolidayPackages() {
   return (
    <>
-    <h1>Destinations</h1>
+    <h1 className='des-head'>Destinations</h1>
     <div className='holiday-wrapper'>
         <div className='holiday-wrapper1'>
             <div>

@@ -4,7 +4,7 @@ import { useFormik } from 'formik'
 import * as Yup from "yup"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {  updateUser } from '../../redux/slices/userSlice'
 
 
@@ -12,7 +12,11 @@ import {  updateUser } from '../../redux/slices/userSlice'
 function Login() {
   const navigate=useNavigate()
   const dispatch = useDispatch()
-
+  const user = useSelector(state => state.user)
+  
+  const handlelLogin=()=>{
+    dispatch(updateUser(true));
+  }
 
   const formik = useFormik({
     initialValues: { username: "", password1: "",},
@@ -35,7 +39,7 @@ function Login() {
           }
         })
         .then((res)=>{
-          dispatch(updateUser({username:res.data.result.username,name:res.data.result.name}))
+          dispatch(updateUser({...user,username:res.data.result.username,name:res.data.result.name,email:res.data.result.email,phone:res.data.result.phone,address:res.data.result.address,type:res.data.result.type}))
         console.log(res.data)})
         .catch(err=>console.log(err))
         navigate('/')
@@ -60,7 +64,7 @@ function Login() {
                   <input className='input' type='password' name='password1' onChange={formik.handleChange} value={formik.values.password1} />
                   <p>{formik.errors.password1}</p>
                 </div>
-                <div className='login'><button type='submit'> LOGIN</button>
+                <div className='login'><button type='submit' onClick={handlelLogin}> LOGIN</button>
                 
                 </div>
               </form>

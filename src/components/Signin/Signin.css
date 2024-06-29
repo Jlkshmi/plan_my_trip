@@ -14,7 +14,7 @@
     padding: 10px;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgb(244, 244, 249) ,rgb(24, 24, 75));
+    background-image: linear-gradient(rgb(255, 255, 255) ,rgb(75, 25, 24));
     cursor: pointer;   
 }
 .form-wrapper p{

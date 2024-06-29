@@ -5,7 +5,7 @@ export const initialState={
     email:"",
     phone:"",
     address:"",
-    
+    type:"",
 }
 const userSlice= createSlice({
     name:'user',
@@ -18,7 +18,7 @@ const userSlice= createSlice({
             state.email=action.payload.email
             state.phone=action.payload.phone
             state.address=action.payload.address
-            
+            state.type=action.payload.type
         }
     },
 })

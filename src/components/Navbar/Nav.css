@@ -50,3 +50,43 @@ font-weight: 500;
 .profile_icon{
     width: 100px;
 }
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-menu{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #000000;
+    color: white;
+    box-shadow: inset;
+    z-index: 1;
+    margin-top: 10px;
+    width: fit-content;
+}
+.dropdown-item{
+   
+    cursor: pointer;
+    border: none;
+    background-color: #000000;
+    text-align: left;
+    color: white;
+    width: fit-content;
+
+}
+.modal-image{
+    width: 100px;
+}
+.label-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.modal-head{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+   
+}
