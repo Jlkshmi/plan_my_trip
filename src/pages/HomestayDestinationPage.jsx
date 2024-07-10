@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import HomeStays from '../components/Category/HomeStay/HomeStays'
 
-function HomeStayListPage() {
+function HomestayDestinationPage() {
   return (
     <>
     <Navbar/>
@@ -11,4 +11,4 @@ function HomeStayListPage() {
   )
 }
 
-export default HomeStayListPage
+export default HomestayDestinationPage

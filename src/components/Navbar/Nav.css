@@ -59,25 +59,26 @@ font-weight: 500;
     display: flex;
     flex-direction: column;
     position: absolute;
-    background-color: #000000;
     color: white;
     box-shadow: inset;
     z-index: 1;
     margin-top: 10px;
     width: fit-content;
+    right: 0;
+    border: solid;
 }
 .dropdown-item{
-   
     cursor: pointer;
-    border: none;
-    background-color: #000000;
-    text-align: left;
-    color: white;
-    width: fit-content;
+    background-color:grey(22, 20, 20);
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+   
 
 }
 .modal-image{
     width: 100px;
+    height: 100px;
 }
 .label-wrapper{
     display: flex;

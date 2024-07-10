@@ -18,6 +18,7 @@ function HomestayList() {
     console.log(homestays);
 
     return (
+        <>
         <div className='homestaylist-wrapper' >
         {homestays.map((ele) => {
             return (
@@ -28,13 +29,13 @@ function HomestayList() {
                                 <img className='homestaylist-image' src={`http://127.0.0.1:8000${ele.images[0].images}`} alt="" />
                             </div>
                         )}
-                        <div className='homestaylist-image-list'>
+                        {/* <div className='homestaylist-image-list'>
                             {ele.images.slice(1, 4).map((img, idx) => (
                                 <div key={idx}>
                                     <img src={`http://127.0.0.1:8000${img.images}`} alt="" />
                                 </div>
                             ))}
-                        </div>
+                        </div> */}
                     </div>
                     <div className='homestaylistdetails-wrapper'>
                         <div className='homestaylistdetails-wrapper1'>
@@ -64,6 +65,7 @@ function HomestayList() {
             );
         },[])}
         </div>
+        </>
     );
 }
 

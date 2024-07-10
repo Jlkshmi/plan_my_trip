@@ -8,15 +8,15 @@ function Category() {
     <>
     <div className='cat-wrapper1'>
     <div className='cat-wrapper'>
-      <div className='logo-wrapper'  onClick={()=> navigate('homestaylist')}>
-      <img src="/images/homestays.png" alt="" />
+      <div className='logo-wrapper'  onClick={()=> navigate('homestaydestination')}>
+      <img src="/images/homestayy.jpg" alt="" />
       <h4>HomeStays</h4>
       </div>
-      <div className='logo-wrapper' onClick={()=> navigate('holidaypackages')}>
-        <img src="/images/holidaypackages.jpeg" alt="" />
-        <h4>Holiday<br/>Packages</h4>
+      <div className='logo-wrapper' onClick={()=> navigate('holidaydestination')}>
+        <img src="/images/holidayyy.png" alt="" />
+        <h4>Holiday Packages</h4>
       </div>
-      <div className='logo-wrapper' onClick={()=> navigate('hotellist')}>
+      <div className='logo-wrapper' onClick={()=> navigate('hoteldestination')}>
           <img src="/images/hotel.jpeg" alt="" />
           <h4>Hotels</h4>
       </div>

@@ -1,0 +1,48 @@
+.homestay-des-add{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 20px;
+}
+.homestay-des-add1{
+    background-color: rgb(43, 42, 42);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.hotel-des-add{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 20px;
+}
+.hotel-des-add1{
+    background-color: rgb(43, 42, 42);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.holiday-des-add{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 20px;
+}
+.holiday-des-add1{
+    background-color: rgb(43, 42, 42);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+.modal-image{
+    width: 100px;
+    height: 100px;
+}
+.label-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

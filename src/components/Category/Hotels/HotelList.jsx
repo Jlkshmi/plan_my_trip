@@ -10,12 +10,7 @@ function HotelList() {
                         <div >
                             <img className='cat-image' src="" alt="" />
                         </div>
-                        <div className='cat-image-list' >
-                            <div>hh</div>
-                            <div>dd</div>
-                            <div>ss</div>
-
-                        </div>
+                        
                     </div>
                     <div className='catdetails-wrapper'>
                         <div className='catdetails-wrapper1'>
