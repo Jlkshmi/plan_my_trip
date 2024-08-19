@@ -1,48 +1,101 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Hotel.css'
+import { FaSearch } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function HotelList() {
-  return (
-    <>
-     <div className='catlist-wrapper'>
+    const navigate = useNavigate();
+    const [hotels, setHotels] = useState([]);
+    const [districtSearch, setDistrictSearch] = useState('');
+    const [rateSearch, setRateSearch] = useState('');
+
+    useEffect(() => {
+        axios
+            .get('http://127.0.0.1:8000/get_hotels')
+            .then((res) => setHotels(res.data))
+            .catch((err) => console.log(err));
+    }, []);
+
+    const filteredHotels = hotels.filter(hotel => {
+        const matchesDistrict = districtSearch === '' || hotel.city?.toLowerCase().includes(districtSearch.toLowerCase());
+        const matchesRate = rateSearch === '' || hotel.price_per_night <= parseFloat(rateSearch);
+        return matchesDistrict && matchesRate;
+    });
+
+    const handleClearFilters = () => {
+        setDistrictSearch('');
+        setRateSearch('');
+    };
+
+    return (
+        <>
+            <div className='catlist-wrapper'>
                 <div className='catlist-wrapper1'>
-                    <div className='cat-images'>
-                        <div >
-                            <img className='cat-image' src="" alt="" />
+                    <div className='hotellist-wrapper2'>
+                        <div className='search_div'>
+                            <FaSearch />
+                            <h4 className='hotellist-button'>City</h4>
+                            <input
+                                className='hotel-input'
+                                type='text'
+                                placeholder='Search by district'
+                                value={districtSearch}
+                                onChange={(e) => setDistrictSearch(e.target.value)}
+                            />
                         </div>
-                        
+                        <div className='search_div'>
+                            <FaSearch />
+                            <h4 className='hotellist-button'>Rate</h4>
+                            <input
+                                className='hotel-input'
+                                type='number'
+                                placeholder='Max rate'
+                                value={rateSearch}
+                                onChange={(e) => setRateSearch(e.target.value)}
+                                
+                            />
+                        </div>
+                        <button onClick={handleClearFilters} className='clear-filters-button'>
+                            Clear Filters
+                        </button>
                     </div>
-                    <div className='catdetails-wrapper'>
-                        <div className='catdetails-wrapper1'>
-                            <div><h4>Name</h4></div>
-                            <div className='star'>
-                                <i class="fa-regular fa-star" ></i>
-                                <i class="fa-regular fa-star" ></i>
-                                <i class="fa-regular fa-star" ></i>
-                                <i class="fa-regular fa-star" ></i>
-                                <i class="fa-regular fa-star" ></i>
-                            </div>
-                        </div>
-                        <div className='catdetails-wrapper1'>
-                            <div className='fecilities'>
-                                <h5>ff</h5>
-                                <h5>ff</h5>
-                                <h5>ff</h5>
-                            </div>
-                            <div className='rating'>
-                                <h4>Excellent </h4>
-                            </div>
-                        </div>
-                        <div className='catdetails-wrapper1'>
-                            <div><h4>Book with 0 payment</h4></div>
-                            <div><h4 className='rate'>7000/-</h4></div>
-                        </div>
+                    <div className='hotel-wrapper3'>
+                        {filteredHotels.length > 0 ? (
+                            filteredHotels.map((ele) => (
+                                <div
+                                    className='sub-hotel-wrapper3'
+                                    key={ele.id}
+                                    onClick={() => navigate('/hoteldetails/' + ele.id)}
+                                >
+                                    <div className='sub-hotel-wrapper3-img'>
+                                        {ele.images.length > 0 && (
+                                            <img className='hotel_thumb'
+                                                src={`http://127.0.0.1:8000${ele.images[0].images}`}
+                                                alt={`Image of ${ele.name}`}
+                                            />
+                                        )}
+                                    </div>
+                                    <div className='head-hotel-wrapper3'>
+                                        <div><h1>{ele.name}</h1></div>
+                                        <div><h3>{ele.city}</h3></div>
+                                    </div>
+                                    <div className='cat-hotel-wrapper3'>
+                                        <div>Review</div>
+                                        <div>Verygood</div>
+                                        <div><h2>{ele.price_per_night}</h2></div>
+                                        <div>{ele.discount}</div>
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div className='no-results'>No hotels found.</div>
+                        )}
                     </div>
-                    
                 </div>
             </div>
-    </>
-  )
+        </>
+    );
 }
 
 export default HotelList

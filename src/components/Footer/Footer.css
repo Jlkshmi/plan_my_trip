@@ -11,6 +11,29 @@
     border-radius: 5px;
     font-size: smaller;
     gap: 30px;
+    align-items: center;
+    
+}
+.footer-wrapper1{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    border-radius: 5px;
+    font-size: smaller;
+    gap: 30px;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.footer-head{
+    color: rgb(0, 0, 0);
+}
+
+.sub-footer-wrapper1{
+    align-items: center;
+    justify-content: center;
+
 }
 .footer{
     background-color: black;

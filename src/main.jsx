@@ -8,11 +8,11 @@ import { Provider } from 'react-redux'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <PersistGate loading={null} persistor={persistor}>
-      <Provider store={Store}>
+  <React.StrictMode> 
+      <PersistGate loading={null} persistor={persistor}>
+        <Provider store={Store}>
          <App />
-      </Provider>
-    </PersistGate>
+        </Provider> 
+      </PersistGate>
   </React.StrictMode>,
 )

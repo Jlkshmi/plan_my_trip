@@ -39,16 +39,16 @@ function Login() {
           }
         })
         .then((res)=>{
-          dispatch(updateUser({...user,username:res.data.result.username,name:res.data.result.name,email:res.data.result.email,phone:res.data.result.phone,address:res.data.result.address,type:res.data.result.type}))
+          dispatch(updateUser({...user,username:res.data.result.username,name:res.data.result.name,email:res.data.result.email,phone:res.data.result.phone,address:res.data.result.address,type:res.data.result.type,id:res.data.result.id}))
         console.log(res.data)})
         .catch(err=>console.log(err))
         navigate('/')
       }
-  })
+  },[])
   console.log(formik.errors)
   return (
     <>
-          <div className='login-wrapper-1'>
+        <div className='login-wrapper-1'>
             <div className='login-wrapper'>
               <form  className='login-form' onSubmit={formik.handleSubmit}>
                 <h2>LOGIN</h2>
@@ -64,14 +64,11 @@ function Login() {
                   <input className='input' type='password' name='password1' onChange={formik.handleChange} value={formik.values.password1} />
                   <p>{formik.errors.password1}</p>
                 </div>
-                <div className='login'><button type='submit' onClick={handlelLogin}> LOGIN</button>
-                
+                <div className='login'><button type='submit' onClick={handlelLogin}> LOGIN</button>               
                 </div>
               </form>
             </div>
-          </div>
-        
-      
+          </div>    
     </>
   )
 }

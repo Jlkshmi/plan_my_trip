@@ -5,6 +5,7 @@ import axios from 'axios'
 import * as Yup from "yup"
 import convertToBase64 from '../../utils/convertToBase64'
 import './Destination.css'
+import { toast } from 'react-toastify'
 
 function HomestayDestinationAdd() {
 
@@ -22,7 +23,6 @@ function HomestayDestinationAdd() {
         }
 
     };
-
 
     const formik = useFormik({
         initialValues: { destination_name: "" },

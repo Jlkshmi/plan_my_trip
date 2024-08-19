@@ -46,3 +46,25 @@
     flex-direction: column;
     gap: 10px;
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+img.hotel_thumb {
+    max-width: 100px;
+    height: auto;
+}
+.hotelview_div{
+    margin-top: 20px;
+}

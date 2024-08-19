@@ -10,16 +10,21 @@ import HomeStayListsPage from '../pages/HomeStayListsPage'
 import HomeStayDetailedPage from '../pages/HomeStayDetailedPage'
 import PaymentFormPage from '../pages/PaymentFormPage'
 import HotelDestinationPage from '../pages/HotelDestinationPage'
-import HolidayPackagesListPage from '../pages/HolidayPackagesListPage'
-import HolidayPackageDestinationPage from '../pages/HolidayPackageDestinationPage'
 import HomestayDestinationPage from '../pages/HomestayDestinationPage'
 import HomestayAddPage from '../pages/HomestayAddPage'
 import HotelsAddPage from '../pages/HotelsAddPage'
-import HolidayPackagesAddPage from '../pages/HolidayPackagesAddPage'
 import HotelDestinationAddPage from '../pages/HotelDestinationAddPage'
-import HomestayDestinationAdd from '../components/AdminComponant/HomestayDestinationAdd'
 import HomestayDestinationAddPage from '../pages/HomestayDestinationAddPage'
-import HolidayPackagesDestinationAddPage from '../pages/HolidayPackagesDestinationAddPage'
+import HotelDetailsPage from '../pages/HotelDetailsPage'
+import HotelBookPage from '../pages/HotelBookPage'
+import HomestayBookPage from '../pages/HomestayBookPage'
+import HotelViewListPage from '../pages/AdminPage/HotelViewListPage'
+import HomestayViewListPage from '../pages/AdminPage/HomestayViewListPage'
+import UserCountViewListPage from '../pages/AdminPage/UserCountViewListPage'
+import HotelBookingsViewListPage from '../pages/AdminPage/HotelBookingsViewListPage'
+import CustomersListViewPage from '../pages/AdminPage/CustomersListViewPage'
+import HomestayBookingsViewListPage from '../pages/AdminPage/HomestayBookingsViewListPage'
+import ManagerListViewPage from '../pages/AdminPage/ManagerListViewPage'
 
 function UserRoutes() {
   return (
@@ -32,18 +37,24 @@ function UserRoutes() {
         <Route path='profile' element={<ProfilePage/>}/>
         <Route path='hoteldestinationadd' element={<HotelDestinationAddPage/>}/>
         <Route path='homestaydestinationadd' element={<HomestayDestinationAddPage/>}/>
-        <Route path='holidaypackagesdestinationadd' element={<HolidayPackagesDestinationAddPage/>}/>
         <Route path='hoteldestination' element={<HotelDestinationPage/>}/>
         <Route path='homestaydestination' element={<HomestayDestinationPage/>}/>
-        <Route path='holidaydestination' element={<HolidayPackageDestinationPage/>}/>
         <Route path='homestayadd' element={<HomestayAddPage/>}/>
         <Route path='hoteladd' element={<HotelsAddPage/>}/>
-        <Route path='holidayadd' element={<HolidayPackagesAddPage/>}/>
         <Route path='homestaylists' element={<HomeStayListsPage/>}/>
         <Route path='hotellist' element={<HotelListPage/>}/>
-        <Route path='holidaypackagelist' element={<HolidayPackagesListPage/>}/>
+        <Route path='hoteldetails/:id' element={<HotelDetailsPage/>}/>
         <Route path='homestaydetails/:id' element={<HomeStayDetailedPage/>}/>
         <Route path='paymentform' element={<PaymentFormPage/>}/>  
+        <Route path='hotelbook' element={<HotelBookPage/>}/>
+        <Route path='homestaybook' element={<HomestayBookPage/>}/>
+        <Route path='hotelviewlist' element={<HotelViewListPage/>}/>
+        <Route path='homestayviewlist' element={<HomestayViewListPage/>}/>
+        <Route path='userlistsview' element={<UserCountViewListPage/>}/>
+        <Route path='hotelbookingviewlist' element={<HotelBookingsViewListPage/>}/>
+        <Route path='homestaybookingviewlist' element={<HomestayBookingsViewListPage/>}/>
+        <Route path='customerviewlist' element={<CustomersListViewPage/>}/>
+        <Route path='managerviewlist' element={<ManagerListViewPage/>}/>
     </Routes> 
     </>
   )

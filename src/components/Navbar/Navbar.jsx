@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { initialState, updateUser } from '../../redux/slices/userSlice'
 
-
 function Navbar() {
   const navigate = useNavigate()
   const user = useSelector(state => state.user)
@@ -44,7 +43,7 @@ function Navbar() {
                     {isOpen && (
                       <div className='dropdown-menu'>
                         <button className='dropdown-item' onClick={() => navigate('/homestayadd')}>Add Homestays</button>
-                        <button className='dropdown-item' onClick={() => navigate('/holidayadd')}>Add Packages</button>
+              
                         <button className='dropdown-item' onClick={() => navigate('/hoteladd')}>Add Hotels</button>
                       </div>
                     )}
@@ -61,7 +60,17 @@ function Navbar() {
                     <div className='dropdown-menu'>
                       <button className='dropdown-item' onClick={() => navigate('/homestaydestinationadd')}>Add Homestay</button>
                       <button className='dropdown-item' onClick={() => navigate('/hoteldestinationadd')} >Add Hotel</button>
-                      <button className='dropdown-item' onClick={() => navigate('/holidaypackagesdestinationadd')} >Add Holiday Packages</button>
+                      <button className='dropdown-item' onClick={() => navigate('/hotelviewlist')}>Hotel List</button>
+                      <button className='dropdown-item' onClick={() => navigate('/homestayviewlist')}>Homestay List</button>
+                      <button className='dropdown-item' onClick={() => navigate('/userlistsview')}>User lists</button>
+                      <button className='dropdown-item' onClick={() => navigate('/hotelbookingviewlist')}>Booked Hotels</button>
+                      <button className='dropdown-item' onClick={()=>navigate('/homestaybookingviewlist')}>Booked Homestays</button>
+                      <button className='dropdown-item' onClick={()=>navigate('/customerviewlist')}>Customets List</button>
+                      <button className='dropdown-item' onClick={()=>navigate('/managerviewlist')}>Managers List</button>
+
+                      
+                      
+                    
                     </div>
                   )}
                 </div></ul>)

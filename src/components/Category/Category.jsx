@@ -12,10 +12,10 @@ function Category() {
       <img src="/images/homestayy.jpg" alt="" />
       <h4>HomeStays</h4>
       </div>
-      <div className='logo-wrapper' onClick={()=> navigate('holidaydestination')}>
+      {/* <div className='logo-wrapper' onClick={()=> navigate('holidaydestination')}>
         <img src="/images/holidayyy.png" alt="" />
         <h4>Holiday Packages</h4>
-      </div>
+      </div> */}
       <div className='logo-wrapper' onClick={()=> navigate('hoteldestination')}>
           <img src="/images/hotel.jpeg" alt="" />
           <h4>Hotels</h4>

@@ -7,14 +7,15 @@ import './CategoryAdd.css'
 
 function HomestayAdd() {
     const formik_1 = useFormik({
-        initialValues: { name: '', images: [], facilities: '', cash: '', state: '', details: '' },
+        initialValues: { name: '', images: [], facilities: '', cash: '', state: '', details: '' ,city:''},
         validationSchema: Yup.object({
             name: Yup.string().max(50, 'Title is too long').required('This field is required'),
             facilities: Yup.string().required('This field is required'),
             cash: Yup.string().required('This field is required'),
             state: Yup.string().required('This field is required'),
             details: Yup.string().required('This field is required'),
-            address: Yup.string().required('This field is required')
+            address: Yup.string().required('This field is required'),
+            city:Yup.string().required('This field is required'),
         }),
         onSubmit: async (values) => {
             try {
@@ -25,6 +26,7 @@ function HomestayAdd() {
                 formData.append('state', values.state);
                 formData.append('details', values.details);
                 formData.append('address',values.address)
+                formData.append('city',values.city)
                 Array.from(values.images).forEach((image, index) => {
                     formData.append(`images[${index}]`, image);
                 });
@@ -82,6 +84,11 @@ function HomestayAdd() {
                         <div><label>Address</label></div>
                         <input placeholder='enter the address' name='address' onChange={formik_1.handleChange} value={formik_1.values.address} />
                         <p>{formik_1.errors.address}</p>
+                    </div>
+                    <div>
+                        <div><label>City</label></div>
+                        <input placeholder='enter the address' name='city' onChange={formik_1.handleChange} value={formik_1.values.city} />
+                        <p>{formik_1.errors.city}</p>
                     </div>
                     <div>
                         <div><button type='submit'>DONE</button></div>
