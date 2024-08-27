@@ -6,16 +6,28 @@ import './HomeStay.css'
 
 function HomestayBook() {
     const location = useLocation();
-    const {checkInDate, checkOutDate, numberOfRooms, roomType, homestays } = location.state || {};
+    const {checkInDate, checkOutDate, numberOfRooms, roomType, homestays , pricePerNight } = location.state || {};
     const user = useSelector(state => state.user);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate()
 
+
+    const calculateTotalPrice = (pricePerNight, numberOfRooms) => {
+        const checkIn = new Date(checkInDate);
+        const checkOut = new Date(checkOutDate);
+        const nights = (checkOut - checkIn) / (1000 * 60 * 60 * 24);
+        return nights > 0 ? pricePerNight * numberOfRooms * nights : 0;
+    };
+    
+    const totalPrice = homestays && homestays.cash && numberOfRooms
+    ? calculateTotalPrice(homestays.cash, numberOfRooms)
+    : 'Calculating...';
+
     const handleBooking = async () => {
         setLoading(true);
         setError(null);
-        navigate('/paymentform', { state: { homestays} });
+        navigate('/paymentform', { state: { homestays,totalPrice} });
        
 
         const bookingData = {
@@ -25,6 +37,7 @@ function HomestayBook() {
             check_out_date: checkOutDate,
             number_of_rooms: numberOfRooms,
             room_type: roomType,
+            total_price:totalPrice,
         };
 
         try {
@@ -71,6 +84,10 @@ function HomestayBook() {
                         <div className='homestay_bookwrapper4'>
                             <h3>ROOM TYPE</h3>
                             <p>{roomType}</p>
+                        </div>
+                        <div className='homestay_bookwrapper4'>
+                            <h3>Total Amount</h3>
+                            <p>{totalPrice}</p>
                         </div>
                         <div className='homestay-book-wrapper5'>
                             <h3>Contact Info</h3>

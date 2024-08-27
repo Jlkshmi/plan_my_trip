@@ -70,7 +70,7 @@ function HotelList() {
                                 >
                                     <div className='sub-hotel-wrapper3-img'>
                                         {ele.images.length > 0 && (
-                                            <img className='hotel_thumb'
+                                            <img 
                                                 src={`http://127.0.0.1:8000${ele.images[0].images}`}
                                                 alt={`Image of ${ele.name}`}
                                             />
@@ -81,10 +81,7 @@ function HotelList() {
                                         <div><h3>{ele.city}</h3></div>
                                     </div>
                                     <div className='cat-hotel-wrapper3'>
-                                        <div>Review</div>
-                                        <div>Verygood</div>
-                                        <div><h2>{ele.price_per_night}</h2></div>
-                                        <div>{ele.discount}</div>
+                                        <div><h2>{ele.price_per_night}/-</h2></div>
                                     </div>
                                 </div>
                             ))

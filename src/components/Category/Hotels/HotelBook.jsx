@@ -6,17 +6,27 @@ import { useState } from 'react';
 
 function HotelBook() {
     const location = useLocation();
-    const { checkInDate, checkOutDate, numberOfRooms, roomType, hotel } = location.state || {};
+    const { checkInDate, checkOutDate, numberOfRooms, roomType, hotel ,pricePerNight} = location.state || {};
     const user = useSelector(state => state.user);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate()
     
+    const calculateTotalPrice = (pricePerNight, numberOfRooms) => {
+        const checkIn = new Date(checkInDate);
+        const checkOut = new Date(checkOutDate);
+        const nights = (checkOut - checkIn) / (1000 * 60 * 60 * 24);
+        return nights > 0 ? pricePerNight * numberOfRooms * nights : 0;
+    };
+
+    const totalPrice = hotel && hotel.price_per_night && numberOfRooms
+    ? calculateTotalPrice(hotel.price_per_night, numberOfRooms)
+    : 'Calculating...';
 
     const handleBooking = async () => {
         setLoading(true);
         setError(null);
-        navigate('/paymentform', { state: { hotel} });
+        navigate('/hotelpayment', { state: { hotel,totalPrice,checkInDate,checkOutDate,numberOfRooms} });
 
 
         const bookingData = {
@@ -26,6 +36,7 @@ function HotelBook() {
             check_out_date: checkOutDate,
             number_of_rooms: numberOfRooms,
             room_type: roomType,
+            total_price:totalPrice,
         };
 
         try {
@@ -68,6 +79,10 @@ function HotelBook() {
                         <div className='book-wrapper4'>
                             <h3>ROOM TYPE</h3>
                             <p>{roomType}</p>
+                        </div>
+                        <div className='book-wrapper4'>
+                            <h3>TOTAL AMOUNT</h3>
+                            <p>{totalPrice}</p>
                         </div>
                     </div>
                     <div className='book-wrapper5'>

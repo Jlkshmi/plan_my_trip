@@ -43,8 +43,9 @@ function Navbar() {
                     {isOpen && (
                       <div className='dropdown-menu'>
                         <button className='dropdown-item' onClick={() => navigate('/homestayadd')}>Add Homestays</button>
-              
                         <button className='dropdown-item' onClick={() => navigate('/hoteladd')}>Add Hotels</button>
+                        <button className='dropdown-item' onClick={()=> navigate('/hotelbookingsmanager')}>Booked Hotels</button>
+                        <button className='dropdown-item' onClick={()=>navigate('/homestaybookingsmanager')}>Booked Homestays</button>
                       </div>
                     )}
                   </div>

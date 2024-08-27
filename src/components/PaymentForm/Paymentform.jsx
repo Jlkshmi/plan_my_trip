@@ -10,7 +10,7 @@ function Paymentform() {
     const [error, setError] = useState(null);
     const [message, setMessage] = useState("");
     const location = useLocation();
-    const { homestays } = location.state || {};
+    const { homestays ,totalPrice} = location.state || {};
     const user = useSelector(state => state.user);
     
     const handleCheckout = async (e) => {
@@ -21,7 +21,7 @@ function Paymentform() {
         const bookingData = {
             homestay: homestays.id,
             payer_id: user.id, 
-            amount: homestays.cash
+            amount: totalPrice
         };
     
         try {
@@ -54,14 +54,13 @@ function Paymentform() {
             alt="The cover of Stubborn Attachments"
           />
           <div className="description">
-            <h3>{homestays.name || 'Homestay Name Not Available'}</h3>
-            <h5>{homestays.cash || 'Price Not Available'}</h5>
+            <h1>{homestays.name || 'Homestay Name Not Available'}</h1>
+            <h4>AMOUNT PAYABLE:{totalPrice || 'Price Not Available'}</h4>
           </div>
         </div>
-        <h1>Checkout</h1>
       {message && <div className="message">{message}</div>}
       <form onSubmit={handleCheckout}>
-        <button type="submit" disabled={loading}>
+        <button  className='homestaypayment-button' type="submit" disabled={loading}>
           {loading ? 'Processing...' : 'Checkout'}
         </button>
         {error && <div className="error">{error}</div>}

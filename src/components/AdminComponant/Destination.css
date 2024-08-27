@@ -68,3 +68,6 @@ img.hotel_thumb {
 .hotelview_div{
     margin-top: 20px;
 }
+.del_border{
+    border: none;
+}

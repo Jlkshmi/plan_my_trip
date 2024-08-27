@@ -89,7 +89,7 @@ function HotelDetails() {
             setError("Please select check-in and check-out dates.");  
         }
         else{
-            navigate('/hotelbook',{state:{checkInDate,checkOutDate,numberOfRooms,roomType,hotel}} )
+            navigate('/hotelbook',{state:{checkInDate,checkOutDate,numberOfRooms,roomType,hotel,pricePerNight:hotel.price_per_night,}} )
             return;
         }
     };

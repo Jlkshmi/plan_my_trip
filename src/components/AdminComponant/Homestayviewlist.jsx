@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import './Destination.css'
 
 function Homestayviewlist() {
     const [homestays, setHomestays] = useState([]);
@@ -10,6 +11,14 @@ function Homestayviewlist() {
             .then((res) => setHomestays(res.data))
             .catch(err => console.log(err));
     }, []);
+
+    const handleDelete = (id)=>{
+        axios
+            .delete(`http://127.0.0.1:8000/delete_homestay/${id}`)
+            .then(() => {setHomestays(homestays.filter(homestay => homestay.id !== id))})
+            .catch(err => console.log(err));
+    }
+
   return (
     
     <>
@@ -38,6 +47,9 @@ function Homestayviewlist() {
                             </td>
                             <td>{ele.address}</td>
                             <td>{ele.city}</td>
+                            <td className='del_border'> 
+                                <button onClick={() => handleDelete(ele.id)}><i className="fa-solid fa-trash"></i></button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

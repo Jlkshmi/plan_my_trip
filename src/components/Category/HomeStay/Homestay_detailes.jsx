@@ -90,7 +90,9 @@ function HomestayDetails() {
             setError("Please select check-in and check-out dates.");
         }
         else {
-            navigate('/homestaybook', { state: { checkInDate, checkOutDate, numberOfRooms, roomType, homestays } })
+            navigate('/homestaybook', { state: { checkInDate, checkOutDate, numberOfRooms, roomType, homestays ,
+                pricePerNight: homestays.cash,
+            } })
             return;
         }
     };
@@ -99,6 +101,7 @@ function HomestayDetails() {
     if (loading) return <div>Loading...</div>;
     if (error) return <div>{error}</div>;
     if (!homestays) return <div>No data available</div>;
+    
 
     return (
         <>
@@ -142,19 +145,19 @@ function HomestayDetails() {
                     <div className='homestaydetailed-image-wrapper'>
                         {homestays.images && homestays.images.length > 0 ? (
                             <>
-                                <div className='homestays_det_img'>
-                                    <img className='homestay_img'
-                                        src={`http://127.0.0.1:8000${homestays.images[0].images}`}
-                                        alt={homestays.name} />
 
-                                    <div>
+                                <div className='homestay_img'>
+                                 <img 
+                                        src={`http://127.0.0.1:8000${homestays.images[0].images}`}
+                                        alt={homestays.name} /></div>
+
+                                    <div className='homestays_det_img'>
                                         {homestays.images.slice(1, 3).map((image, index) => (
-                                            <div key={index}>
-                                                <img src={`http://127.0.0.1:8000${image.images}`} alt={`Image of ${homestays.name}`} />
+                                            <div key={index} className='homestays_det_img1'>
+                                                <img src={`http://127.0.0.1:8000${image.images}`} alt={`Image of ${homestays.name}`}  />
                                             </div>
                                         ))}
                                     </div> 
-                                </div>
                             </>
 
 
@@ -165,11 +168,15 @@ function HomestayDetails() {
                     </div>
                     <div className='homestay-name'>
                         <h1>{homestays.name}</h1>
-                        <h1>{calculateTotalPrice(homestays.cash,numberOfRooms)}</h1>
+                        <h1><i className="fa-solid fa-indian-rupee-sign"></i>{calculateTotalPrice(homestays.cash,numberOfRooms)}</h1>
+                    </div>
+                    <div>
+                        <h3>FACILITIES</h3>
+                        <p>{homestays.facilities}</p>
                     </div>
 
                     <div>
-                        <h3>Details</h3>
+                        <h3>DETAILS</h3>
                         <div className='homestay-footer'>
                             <p>{homestays.details}</p>
                             <div>

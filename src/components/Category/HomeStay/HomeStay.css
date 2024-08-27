@@ -11,6 +11,7 @@
 }
 .catlist-wrapper1{
     display: flex;
+    justify-content: center;
     flex-direction: column;
     padding-top: 10px;
     gap: 20px;
@@ -119,7 +120,7 @@ input:focus{
    
 }
 .homestaylist-image{
-    width: 250px;
+   
     margin: 10px;
     height: 150px;
     width: 150px;
@@ -184,9 +185,15 @@ input:focus{
 .homestaydetailed-image-wrapper{
     align-items: center;
     display: flex;
-    width: 200px;
-    display: flex;
+    gap: 20px;
 
+}
+.homestay-images-detils{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 20px;
 }
 
 .options-homestay{
@@ -232,7 +239,7 @@ input:focus{
     justify-content: space-between;
     position: relative;
     gap: 20px;
-    width: 100%;
+    
 }
 .homestay-input{
     background: #969696;
@@ -257,13 +264,20 @@ input:focus{
     background: #636161;
     padding: 10px;
 }
-.homestay_img{
-    width: 200px
+.homestay_img img{
+    height: 300px;
+    width: 500px;
+    border-radius: 3px;
 }
-.homestays_det_img{
+.homestays_det_img img{
     display: flex;
+    flex-direction: column;
     gap: 20px;
-    justify-content: space-between;
+    width: 300px;
+    height: 150px;
+}
+.homestays_det_img1{
+    gap: 20px;
 }
 .homestay-name{
     display: flex;
@@ -322,18 +336,6 @@ input:focus{
     justify-content: space-between;
     width: 100%;
 }
-/* .homestay_payment-btn-wrapper{
-
-} */
-.homestay-payment-btn{
-    border: none;
-    background-color: rgb(125, 213, 229);
-    padding: 10px;
-    align-items: center;
-    margin-top: 10px; 
-    justify-content:end;
-}
-
 
 
 

@@ -25,6 +25,10 @@ import HotelBookingsViewListPage from '../pages/AdminPage/HotelBookingsViewListP
 import CustomersListViewPage from '../pages/AdminPage/CustomersListViewPage'
 import HomestayBookingsViewListPage from '../pages/AdminPage/HomestayBookingsViewListPage'
 import ManagerListViewPage from '../pages/AdminPage/ManagerListViewPage'
+import HotelBookingsMangerPage from '../pages/ManagerPage/HotelBookingsMangerPage'
+import HotelPaymentPage from '../pages/HotelPaymentPage'
+import HomestayBookingsManagerPage from '../pages/ManagerPage/HomestayBookingsManagerPage'
+import HomestayImagesPage from '../pages/HomestayImagesPage'
 
 function UserRoutes() {
   return (
@@ -43,6 +47,7 @@ function UserRoutes() {
         <Route path='hoteladd' element={<HotelsAddPage/>}/>
         <Route path='homestaylists' element={<HomeStayListsPage/>}/>
         <Route path='hotellist' element={<HotelListPage/>}/>
+        <Route path='homestayimages/:id' element={<HomestayImagesPage/>}/>
         <Route path='hoteldetails/:id' element={<HotelDetailsPage/>}/>
         <Route path='homestaydetails/:id' element={<HomeStayDetailedPage/>}/>
         <Route path='paymentform' element={<PaymentFormPage/>}/>  
@@ -55,6 +60,9 @@ function UserRoutes() {
         <Route path='homestaybookingviewlist' element={<HomestayBookingsViewListPage/>}/>
         <Route path='customerviewlist' element={<CustomersListViewPage/>}/>
         <Route path='managerviewlist' element={<ManagerListViewPage/>}/>
+        <Route path='hotelbookingsmanager' element={<HotelBookingsMangerPage/>}/>
+        <Route path='homestaybookingsmanager' element={<HomestayBookingsManagerPage/>}/>
+        <Route path='hotelpayment' element={<HotelPaymentPage/>}/>
     </Routes> 
     </>
   )

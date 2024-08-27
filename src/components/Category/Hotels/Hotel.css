@@ -51,10 +51,10 @@
     justify-content: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
-.sub-hotel-wrapper3-img{
-    width: 200px;
+.sub-hotel-wrapper3-img img{
+    padding: 10px;
     height: 200px;
-
+    width: 300px;
 }
 .cat-hotel-wrapper3{
     align-items: center;
@@ -172,7 +172,7 @@ input:focus{
 }
 .hotel_thumb{
     width: 350px;
-    height: 200px;
+    height: 300px;
 }
 .subwrapper-wrapper3{
     align-items: center;
@@ -335,6 +335,17 @@ input:focus{
     justify-content:end;
 }
 
-
-
+.product{
+    background-color: #393939;
+    padding: 10px;
+}
+.hotelpayment-button{
+    border: none;
+    margin-top: 10px;
+    background: #000;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
 

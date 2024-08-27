@@ -67,7 +67,7 @@ function HomestayList() {
                         {filteredHomestays.length > 0 ? (filteredHomestays.map((ele) => (<div className='homestaylist-wrapper1' key={ele.id} onClick={() => (navigate('/homestaydetails/' + ele.id))}>
                             <div className='homestaylist-images'>
                                 {ele.images.length > 0 && (
-                                    <div  >
+                                    <div>
                                         <img className='homestaylist-image' src={`http://127.0.0.1:8000${ele.images[0].images}`} alt="" />
                                     </div>
                                 )}

@@ -8,6 +8,8 @@ export const initialState={
     address:"",
     type:"",
     reviews:[],
+    is_blocked: false,
+    
 
 }
 const userSlice= createSlice({
@@ -23,6 +25,7 @@ const userSlice= createSlice({
             state.phone=action.payload.phone
             state.address=action.payload.address
             state.type=action.payload.type
+            state.is_blocked = action.payload.is_blocked;
         }
     },
 })
