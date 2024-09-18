@@ -125,154 +125,12 @@ input:focus{
 #search-icon{
     color: rgb(0, 0, 0);
 }
-.hoteldet-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding:20px ;
-    background: #000;
-}
-.hoteldet-wrapper1{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;   
-}
-.hoteldet-wrapper2{
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    justify-content: center;
-}
-.in-div{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: #ffffff;  
-}
-.in-div button{
-    border: none;
-    background: #000;
-    color: #868282;
-}
-.in-div input{
-    align-items: center;
-    margin: 3px; 
-    color: #393939; 
-    width: fit-content;
-}
-.hoteldet-wrapper3{
-    display: flex;
-    background: white;
-    border-radius: 4px;
-    border: none;
-    box-shadow:rgb(83, 83, 83) 3px 3px;
-    margin: 20px;
 
-}
 .hotel_thumb{
     width: 350px;
     height: 300px;
 }
-.subwrapper-wrapper3{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    color: #000;
-    background: #afaeae;
-    padding: 10px;
-    border-radius: 3px;
-}
-.subwrapper1-wrapper3{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-.subwrapper2-wrapper3{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    gap: 20px;
-}
-.subw1-img img{
-    height: 300px;
-    width: 500px;
-    border-radius: 3px;
-}
-.subwrapper3-wrapper3{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    color: #000;
-    padding: 10px;
-    border-radius: 3px;
-    height: fit-content;
-    
-}
-.hoteldet-wrapper4{
-    display: flex;
-    background: white;
-    border-radius: 4px;
-    border: none;
-    box-shadow:rgb(83, 83, 83) 3px 3px; 
-    width: 900px; ;
-    flex-direction: column;
-    padding: 10px;
-}
-.hoteldet-wrapper5{
-    display: flex;
-    background: white;
-    border-radius: 4px;
-    border: none;
-    box-shadow:rgb(83, 83, 83) 3px 3px; 
-    width: 900px; ;
-    flex-direction: column;
-    padding: 10px;
-    margin-top: 10px;
-}
-.comment-input-wrapper{
-    display: flex;
-    align-items: center;
-    bottom: none;
-    background: grey;
-    border-radius: 3px;
-    padding: 5px;
-    gap: 15px;
-}
-.comment-input{
-    color: #000;
-}
-.review_view_wrapper{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-.review_view_wrapper1{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-}
-.review_submit_button{
-    border: none;
-    background:grey;
-}
-.book-button{
-    background-color: #afaeae ;
-    width: fit-content;
-    height: fit-content;
-    padding: 10px;
-    margin-top: 350px;
-    cursor: pointer;
-    border: none;
-}
-.rate_wrapper{
-    display: flex;
-    align-items: center;
-}
+
 .book-all-wrapper{
     display: flex;
     flex-direction: column;
@@ -347,5 +205,216 @@ input:focus{
     align-items: center;
     justify-content: center;
     display: flex;
+}
+
+/* hoteldetailes page */
+
+.hoteldet-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #000;
+}
+
+.hoteldet-wrapper1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hoteldet-wrapper2 {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.in-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #ffffff;
+}
+
+.in-div button {
+    border: none;
+    background: #000;
+    color: #868282;
+}
+
+.in-div input {
+    align-items: center;
+    margin: 3px;
+    color: #393939;
+    width: fit-content;
+}
+
+.hoteldet-wrapper3 {
+    display: flex;
+    background: white;
+    border-radius: 4px;
+    border: none;
+    box-shadow: rgb(83, 83, 83) 3px 3px;
+    margin: 20px;
+}
+
+.subwrapper-wrapper3 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    color: #000;
+    background: #afaeae;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.subwrapper1-wrapper3 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.subwrapper2-wrapper3 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.subw1-img img {
+    height: 300px;
+    width: 500px;
+    border-radius: 3px;
+}
+
+.subwrapper3-wrapper3 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    color: #000;
+    padding: 10px;
+    border-radius: 3px;
+    height: fit-content;
+}
+
+.hoteldet-wrapper4,
+.hoteldet-wrapper5 {
+    display: flex;
+    background: white;
+    border-radius: 4px;
+    border: none;
+    box-shadow: rgb(83, 83, 83) 3px 3px;
+    width: 900px;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.comment-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: grey;
+    border-radius: 3px;
+    padding: 5px;
+    gap: 15px;
+}
+
+.comment-input {
+    color: #000;
+}
+
+.review_view_wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.review_view_wrapper1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.review_submit_button {
+    border: none;
+    background: grey;
+}
+
+.book-button {
+    background-color: #afaeae;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    margin-top: 20px; 
+    cursor: pointer;
+    border: none;
+}
+
+.rate_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .hoteldet-wrapper {
+        padding: 10px;
+    }
+
+    .hoteldet-wrapper3,
+    .hoteldet-wrapper4,
+    .hoteldet-wrapper5 {
+        width: 100%; 
+        margin: 10px 0;
+    }
+
+    .hoteldet-wrapper2 {
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    .subw1-img img {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .in-div {
+        width: 100%; 
+    }
+
+    .book-button {
+        margin-top: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .in-div input {
+        font-size: 0.875rem; 
+    }
+
+    .subwrapper1-wrapper3 {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; 
+    }
+
+    .comment-input-wrapper {
+        flex-direction: column; 
+    }
+
+    .review_view_wrapper1 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .book-button {
+        width: 100%; 
+        padding: 15px; 
+    }
 }
 

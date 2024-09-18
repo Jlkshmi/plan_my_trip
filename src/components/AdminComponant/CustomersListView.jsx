@@ -55,7 +55,7 @@ function CustomersListView() {
                                     </button>
                                 </td>
                                 <td>
-                                    {ele.is_blocked ? ('unblocked') : ('blocked')}
+                                    {ele.is_blocked ? ('blocked') : ('unblocked')}
                                 </td>
                             </tr>
                         ))}

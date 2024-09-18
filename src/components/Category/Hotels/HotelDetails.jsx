@@ -168,6 +168,7 @@ function HotelDetails() {
                                 ))}
                             </div>
                         </div>
+                        
                         <button className='book-button' onClick= {handleBooking} >
                             BOOK NOW
                         </button>
