@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import './HomeStay.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { FaSearch } from 'react-icons/fa'
 
 function HomestayList() {
     const navigate = useNavigate()
-
+    const { destination_name } = useParams(); 
     const [homestays, setHomestays] = useState([]);
     const [districtSearch, setDistrictSearch] = useState('');
     const [rateSearch, setRateSearch] = useState('');
 
     useEffect(() => {
         axios
-            .get('http://127.0.0.1:8000/get_homestays')
+            .get(`http://127.0.0.1:8000/homestays/${destination_name}/`)
             .then((res) => setHomestays(res.data))
             .catch(err => console.log(err));
-    }, []);
+    }, [destination_name]);
 
     const filteredHomestays = homestays.filter(homestay => {
         const matchesDistrict = districtSearch === '' || homestay.city?.toLowerCase().includes(districtSearch.toLowerCase());

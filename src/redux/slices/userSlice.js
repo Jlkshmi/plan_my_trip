@@ -25,7 +25,7 @@ const userSlice= createSlice({
             state.phone=action.payload.phone
             state.address=action.payload.address
             state.type=action.payload.type
-            state.is_blocked = action.payload.is_blocked;
+            state.is_blocked=action.payload.is_blocked;
         }
     },
 })

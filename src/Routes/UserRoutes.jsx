@@ -45,8 +45,8 @@ function UserRoutes() {
         <Route path='homestaydestination' element={<HomestayDestinationPage/>}/>
         <Route path='homestayadd' element={<HomestayAddPage/>}/>
         <Route path='hoteladd' element={<HotelsAddPage/>}/>
-        <Route path='homestaylists' element={<HomeStayListsPage/>}/>
-        <Route path='hotellist' element={<HotelListPage/>}/>
+        <Route path='homestaylists/:destination_name' element={<HomeStayListsPage/>}/>
+        <Route path='hotellist/:destination_name' element={<HotelListPage/>}/>
         <Route path='homestayimages/:id' element={<HomestayImagesPage/>}/>
         <Route path='hoteldetails/:id' element={<HotelDetailsPage/>}/>
         <Route path='homestaydetails/:id' element={<HomeStayDetailedPage/>}/>

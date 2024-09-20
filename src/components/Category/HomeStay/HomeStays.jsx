@@ -6,16 +6,20 @@ import { FaSearch } from 'react-icons/fa'
 
 function HomeStays() {
   const navigate = useNavigate()
-  const [homestays, sethomestays] = useState([])
+  // const [homestays, sethomestays] = useState([])
+  const [destinations, setDestinations] = useState([]);
     const [searchQuery,setSearchQuery]=useState('')
     useEffect(() =>{
         axios
             .get("http://127.0.0.1:8000/homestay_destination_add")
-            .then((res)=>sethomestays(res.data))
+            .then((res)=>setDestinations(res.data))
             .catch(err=>console.log(err))
     },[])
 
-    const filteredHomestays =homestays.filter(homestay=>homestay.destination_name.toLowerCase().includes(searchQuery.toLowerCase()))
+    // const filteredHomestays =homestays.filter(homestay=>homestay.destination_name.toLowerCase().includes(searchQuery.toLowerCase()))
+    const filteredDestinations = destinations.filter(destination =>
+      destination.destination_name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
     return (
         <>
         
@@ -29,12 +33,12 @@ function HomeStays() {
                     onChange={(e) => setSearchQuery(e.target.value)} 
                     /> </div></div>
                     <div className='homestay-wrapper' >
-                    {filteredHomestays.map((ele,index) => (
-                        <div className='homestay-wrapper1' key={index}  onClick={()=>navigate('/homestaylists')}>
+                    {filteredDestinations.map((destination,index) => (
+                        <div className='homestay-wrapper1' key={index}  onClick={()=>navigate(`/homestaylists/${destination.destination_name}`)}>
                         <div>
-                          <img className='des_image' src={ele.image} />
+                          <img className='des_image' src={destination.image} />
                         </div>
-                        <div><h3>{ele.destination_name}</h3></div>
+                        <div><h3>{destination.destination_name}</h3></div>
                       </div>
                     ))}
                     </div>
